@@ -1,6 +1,7 @@
 import { AiOutlineEye } from 'react-icons/ai';
 import { formatNumber } from '@/utils/format';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CourseCardProps {
   title: string;
@@ -8,6 +9,7 @@ interface CourseCardProps {
   experts: string[];
   viewCount: number;
   slug: string;
+  index: number;
 }
 
 export default function CourseCard({
@@ -15,16 +17,32 @@ export default function CourseCard({
   description,
   experts,
   viewCount,
-  slug
+  slug,
+  index
 }: CourseCardProps) {
   const displayLimit = 2;
   const remainingCount = experts.length - displayLimit;
+  
+  const waveNumber = (index % 6) + 1;
+  const wavePath = `/images/courses/background/wave_${waveNumber}.png`;
 
   return (
     <Link href={`/courses/${slug}`} className="block">
       <div className="relative group cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1">
-        <div className="relative p-8 flex flex-col min-h-[400px] bg-[#FAFAFA] rounded-lg border border-gray-100">
-          <div className="flex-grow">
+        <div className="relative flex flex-col min-h-[400px] bg-[#FAFAFA] rounded-lg border border-gray-100 overflow-hidden">
+          {/* Wave Image */}
+          <div className="relative w-full h-[100px] bg-[#FAFAFA]">
+            <Image
+              src={wavePath}
+              alt=""
+              fill
+              className="object-contain"
+              priority={index < 4}
+            />
+          </div>
+          
+          {/* Content */}
+          <div className="relative p-8">
             <h3 className="text-2xl font-serif mb-4 text-gray-900 transition-colors duration-300 group-hover:text-coral-600">{title}</h3>
             <p className="text-gray-600 text-sm mb-6 line-clamp-5">{description}</p>
 

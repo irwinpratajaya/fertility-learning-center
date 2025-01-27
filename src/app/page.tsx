@@ -54,14 +54,15 @@ export default function Home() {
 
             {/* Course Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredCourses.map((course) => (
+              {filteredCourses.map((course, index) => (
                 <CourseCard
-                  key={course.title}
+                  key={course.slug}
                   title={course.title}
                   description={course.description}
                   experts={course.experts}
                   viewCount={course.viewCount}
                   slug={course.slug}
+                  index={index}
                 />
               ))}
             </div>

@@ -8,20 +8,18 @@ interface ExpertCardProps {
 
 export default function ExpertCard({ name, role, imageUrl }: ExpertCardProps) {
   return (
-    <div className="flex items-center space-x-3">
-      <div className="w-12 h-12 rounded-full overflow-hidden">
+    <div className="bg-white p-4 rounded-lg shadow-sm">
+      <div className="relative w-full h-12 mb-4 overflow-hidden">
         <Image
           src={imageUrl}
           alt={name}
           width={48}
           height={48}
-          className="object-cover"
+          className="object-cover rounded-full"
         />
       </div>
-      <div>
-        <h4 className="text-sm font-medium text-gray-900">{name}</h4>
-        <p className="text-sm text-gray-500">{role}</p>
-      </div>
+      <h3 className="font-medium text-gray-900">{name}</h3>
+      <p className="text-sm text-gray-500">{role}</p>
     </div>
   );
 }

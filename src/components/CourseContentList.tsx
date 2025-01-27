@@ -1,6 +1,8 @@
+import { formatDuration } from '@/utils/duration';
+
 interface ContentItem {
   title: string;
-  duration?: string;
+  duration: number;
 }
 
 interface CourseContentListProps {
@@ -8,8 +10,15 @@ interface CourseContentListProps {
 }
 
 export default function CourseContentList({ items }: CourseContentListProps) {
+  const totalDuration = items.reduce((acc, item) => acc + item.duration, 0);
+
   return (
     <div className="space-y-4">
+      <div className="flex justify-end">
+        <span className="text-sm text-gray-500">
+          Total Duration: {formatDuration(totalDuration)}
+        </span>
+      </div>
       {items.map((item, index) => (
         <div
           key={index}
@@ -19,9 +28,7 @@ export default function CourseContentList({ items }: CourseContentListProps) {
             <span className="text-sm text-gray-400">{(index + 1).toString().padStart(2, '0')}</span>
             <span className="text-sm text-gray-900">{item.title}</span>
           </div>
-          {item.duration && (
-            <span className="text-sm text-gray-400">{item.duration}</span>
-          )}
+          <span className="text-sm text-gray-400">{formatDuration(item.duration)}</span>
         </div>
       ))}
     </div>

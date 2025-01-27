@@ -27,12 +27,16 @@ export default function Footer() {
             inflection
           </Link>
           <div className="flex items-center gap-3">
-            <div className="uppercase text-sm tracking-wide bg-white/20 px-3 py-1.5 rounded-full">
-              Women Owned
-            </div>
+              <Image
+                src="/women_owned.png"
+                alt="Profile"
+                width={40}
+                height={40}
+                className="object-cover"
+              />
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white">
               <Image
-                src="/avatar.jpg"
+                src="/images/experts/deborah.jpeg"
                 alt="Profile"
                 width={40}
                 height={40}
