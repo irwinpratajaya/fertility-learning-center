@@ -61,6 +61,7 @@ export default function Home() {
                   description={course.description}
                   experts={course.experts}
                   viewCount={course.viewCount}
+                  slug={course.slug}
                 />
               ))}
             </div>

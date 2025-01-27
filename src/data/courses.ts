@@ -5,7 +5,8 @@ export interface Course {
   description: string;
   experts: string[];
   viewCount: number;
-  type: CourseType
+  type: CourseType;
+  slug: string;
 }
 
 export const courses: Course[] = [
@@ -22,6 +23,7 @@ export const courses: Course[] = [
     ],
     viewCount: 631,
     type: 'Advanced',
+    slug: 'ivf-in-vitro-fertilization',
   },
   {
     title: "Fertility 101",
@@ -35,6 +37,7 @@ export const courses: Course[] = [
     ],
     viewCount: 1500,
     type: 'Introductory',
+    slug: 'fertility-101',
   },
   {
     title: "Mental Health & Fertility",
@@ -44,6 +47,7 @@ export const courses: Course[] = [
     ],
     viewCount: 8,
     type: 'Population Specific',
+    slug: 'mental-health-and-fertility',
   },
   {
     title: "PCOS - Polycystic Ovary Syndrome",
@@ -53,6 +57,7 @@ export const courses: Course[] = [
     ],
     viewCount: 12,
     type: 'Advanced',
+    slug: 'pcos-polycystic-ovary-syndrome',
   },
   {
     title: "Lifestyle Changes for Fertility",
@@ -63,6 +68,7 @@ export const courses: Course[] = [
     ],
     viewCount: 25,
     type: 'Introductory',
+    slug: 'lifestyle-changes-for-fertility',
   },
   {
     title: "Male Factor Infertility",
@@ -73,6 +79,7 @@ export const courses: Course[] = [
     ],
     viewCount: 18,
     type: 'Advanced',
+    slug: 'male-factor-infertility',
   },
   {
     title: "Miscarriage",
@@ -82,6 +89,7 @@ export const courses: Course[] = [
     ],
     viewCount: 14,
     type: 'Population Specific',
+    slug: 'miscarriage',
   },
   {
     title: "Egg Freezing",
@@ -91,6 +99,7 @@ export const courses: Course[] = [
     ],
     viewCount: 22,
     type: 'Advanced',
+    slug: 'egg-freezing',
   },
   {
     title: "Adoption",
@@ -100,6 +109,7 @@ export const courses: Course[] = [
     ],
     viewCount: 10,
     type: 'Population Specific',
+    slug: 'adoption',
   },
   {
     title: "Fertility on a Budget",
@@ -109,6 +119,7 @@ export const courses: Course[] = [
     ],
     viewCount: 30,
     type: 'Introductory',
+    slug: 'fertility-on-a-budget',
   },
   {
     title: "Endometriosis",
@@ -119,6 +130,7 @@ export const courses: Course[] = [
     ],
     viewCount: 16,
     type: 'Advanced',
+    slug: 'endometriosis',
   },
   {
     title: "Fertility Treatment Options",
@@ -129,5 +141,6 @@ export const courses: Course[] = [
     ],
     viewCount: 0,
     type: 'Advanced',
+    slug: 'fertility-treatment-options',
   }
 ];
