@@ -1,12 +1,14 @@
+import Link from 'next/link';
+
 interface LessonCardProps {
   title: string;
   category: string;
-  slug: string;
+  slug?: string;
 }
 
 export default function LessonCard({ title, category, slug }: LessonCardProps) {
   return (
-    <div className="group cursor-pointer">
+    <Link href={slug ? `/lessons/${slug}` : '#'} className="block">
       <div className="p-6 bg-[#FAFAFA] rounded-lg border border-gray-100 hover:shadow-sm transition-all duration-300">
         <div className="space-y-3">
           <p className="text-xs text-gray-500 uppercase tracking-wider">{category}</p>
@@ -15,6 +17,6 @@ export default function LessonCard({ title, category, slug }: LessonCardProps) {
           </h3>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
