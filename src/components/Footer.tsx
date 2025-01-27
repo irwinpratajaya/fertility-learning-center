@@ -22,18 +22,18 @@ export default function Footer() {
     <footer className="bg-[#FFA69E] text-white">
       <div className="container mx-auto px-4 py-6">
         {/* Top Section with Logo and Badge */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
           <Link href="/" className="text-2xl font-serif italic">
             inflection
           </Link>
           <div className="flex items-center gap-3">
-              <Image
-                src="/women_owned.png"
-                alt="Profile"
-                width={40}
-                height={40}
-                className="object-cover"
-              />
+            <Image
+              src="/women_owned.png"
+              alt="Women Owned Business"
+              width={40}
+              height={40}
+              className="object-cover"
+            />
             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white">
               <Image
                 src="/images/experts/deborah.jpeg"
@@ -46,15 +46,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-col">
+        <div className="flex flex-col lg:flex-row justify-between gap-8">
+          <div className="flex flex-col space-y-6 lg:space-y-3">
             {/* Main Navigation */}
-            <nav className="flex flex-wrap gap-x-8 mb-3">
+            <nav className="grid grid-cols-2 sm:flex sm:flex-wrap gap-y-3 gap-x-8">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm hover:underline"
+                  className="text-sm hover:underline whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
@@ -62,12 +62,12 @@ export default function Footer() {
             </nav>
 
             {/* Bottom Links */}
-            <div className="flex flex-wrap gap-x-8 mb-3">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-y-3 gap-x-8">
               {bottomLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm hover:underline"
+                  className="text-sm hover:underline whitespace-nowrap"
                 >
                   {link.name}
                 </Link>
@@ -75,9 +75,8 @@ export default function Footer() {
             </div>
           </div>
 
-
           {/* Disclaimer */}
-          <div className="flex max-w-[30%] justify-end items-end">
+          <div className="lg:max-w-[30%] lg:text-right">
             <p className="text-xs opacity-80">
               Our content is for informational purposes only — it is not a substitute for medical advice, diagnosis, or treatment.
             </p>
